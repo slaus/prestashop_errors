@@ -1,4 +1,4 @@
-Глобальные переменные Smarty в шаблонах PrestaShop
+Ошибка количества допустимых симоволов в характеристиках товаров в Prestashop 1.6
 ============
 
 Действующие переменные
@@ -6,13 +6,6 @@
 
 | Command | Description |
 | --- | --- |
-| --- | **Админка** |
-| **{$shop_name}** | Название магазина |
-| **{$logged}** | Залогинен ли покупатель (можно заменить на {$cookie→isLogged()}) |
-| **{$base_dir}** | URL базовой директории магазина (http://myshop.x/) |
-| **{$base_dir_ssl}** | URL базовой директории c использованием SSL, иначе то же, что и base_dir (https://myshop.x/) |
-| **{$content_dir}** | $protocol_content.Tools::getShopDomain().PS_BASE_URI |
-| **{$tpl_dir}** | Директория темы (/home/v/server/myshop.x/public_html/themes/prestashop/) |
-| **{$tpl_uri}** | URL темы (/themes/prestashop/) |
-| **{$modules_dir}** | Директория модулей (/modules/) |
-| **{$mail_dir}** | _MAIL_DIR_ |
+| **/classes/Feature.php** | 'name' => array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isGenericName', 'required' => true, 'size' => 512) |
+| **/classes/FeatureValue.php** | array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isGenericName', 'required' => true, 'size' => 2048) |
+| **База данных** | команда ALTER TABLE `ps_feature_value_lang` CHANGE `value` `value` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL; |
